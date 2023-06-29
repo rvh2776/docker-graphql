@@ -23,7 +23,7 @@ jobs:
       with:
         major_pattern: "major:"
         minor_pattern: "feat:"
-        version_format: "${major}.${minor}.${patch}-prerelease${increment}"
+        version_format: "${major}.${minor}.${patch}-${increment}"
       id: version
         
     - name: Docker login
@@ -36,7 +36,7 @@ jobs:
         echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Fin del login"
-        echo "New version: $NEW_VERSION !!!"
+        echo "New version: $NEW_VERSION"
         
 #     - name: Build Docker image
 #       run: |
