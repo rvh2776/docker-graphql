@@ -35,7 +35,6 @@ jobs:
         echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Fin del login"
-        echo "New version: $NEW_VERSION created: $(date +%d/%m/%Y)"
         
     - name: Build Docker image
       env:
@@ -51,5 +50,6 @@ jobs:
         docker push rvh2776/docker-graphql:$NEW_VERSION
         docker push rvh2776/docker-graphql:latest
         
+        echo "New version created: $(date +%d/%m/%Y)"
 
 #       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
