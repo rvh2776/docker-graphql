@@ -36,7 +36,7 @@ jobs:
         echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Fin del login"
-        echo "New version: $NEW_VERSION  created:$(date +%d/%m/%Y)"
+        echo "New version: $NEW_VERSION created: $(date +%d/%m/%Y)"
         
 #     - name: Build Docker image
 #       run: |
