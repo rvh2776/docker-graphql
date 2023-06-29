@@ -27,6 +27,14 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Fin del login"
         
+    - name: Build Docker image
+      run: |
+        docker build -t rvh2776/docker-graphql:0.0.1 .
+        
+    - name: Push Docker image
+      run: |
+        docker push rvh2776/docker-graphql:0.0.1 .
+        
         
         
         
