@@ -41,14 +41,14 @@ jobs:
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        docker build -t rvh2776/docker-graphql:$NEW_VERSION-$(date +%d/%m/%Y) .
+        docker build -t rvh2776/docker-graphql:$NEW_VERSION .
         docker build -t rvh2776/docker-graphql:latest .
         
     - name: Push Docker image
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        docker push rvh2776/docker-graphql:$NEW_VERSION-$(date +%d/%m/%Y)
+        docker push rvh2776/docker-graphql:$NEW_VERSION
         docker push rvh2776/docker-graphql:latest
         
 
